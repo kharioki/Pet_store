@@ -48,7 +48,10 @@ class DetailsScreen extends StatelessWidget {
             margin: EdgeInsets.only(top: 20),
             child: Align(
               alignment: Alignment.topCenter,
-              child: Image.asset('assets/images/pet-cat2.png'),
+              child: Hero(
+                tag: 'heroassets/images/pet-cat2.png',
+                child: Image.asset('assets/images/pet-cat2.png'),
+              ),
             ),
           ),
           Align(

@@ -20,7 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
       transform: Matrix4.translationValues(xOffset, yOffset, 0)
         ..scale(scaleFactor),
       duration: Duration(milliseconds: 250),
-      color: Colors.grey[200],
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+        borderRadius: BorderRadius.circular(isDrawerOpen ? 40 : 0),
+      ),
       child: Column(
         children: <Widget>[
           SizedBox(height: 50),
@@ -67,7 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                CircleAvatar(),
+                CircleAvatar(
+                  backgroundColor: Colors.blueGrey[100],
+                ),
               ],
             ),
           ),
