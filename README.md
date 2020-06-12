@@ -1,3 +1,3 @@
 ## pet_store
 
-A Flutter project showing an implementation af a pet-store.
+A Flutter project showing a UI implementation of a pet-store.

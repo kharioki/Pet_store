@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_store/configuration.dart';
+import 'package:pet_store/screens/details_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -127,89 +128,97 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: <Widget>[
                 // featured pets
-                Container(
-                  height: 240,
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.blueGrey[200],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: shadowList,
-                              ),
-                              margin: EdgeInsets.only(top: 40),
-                            ),
-                            Align(
-                              child: Image.asset(
-                                'assets/images/pet-cat1.png',
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.only(top: 60, bottom: 20),
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
-                            boxShadow: shadowList,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailsScreen()));
+                  },
+                  child: Container(
+                    height: 240,
+                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Stack(
                             children: <Widget>[
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Text(
-                                    'Async',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      color: Colors.grey[700],
-                                    ),
-                                  ),
-                                  Image.asset(
-                                    'assets/icons/female.png',
-                                    height: 36,
-                                    width: 36,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                'Abyssinian Cat',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.grey[500],
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.blueGrey[200],
+                                  borderRadius: BorderRadius.circular(20),
+                                  boxShadow: shadowList,
                                 ),
+                                margin: EdgeInsets.only(top: 40),
                               ),
-                              SizedBox(height: 10),
-                              Text('0.6 years old'),
-                              SizedBox(height: 10),
-                              Row(
-                                children: <Widget>[
-                                  Icon(
-                                    Icons.location_on,
-                                    color: primaryGreen,
-                                  ),
-                                  SizedBox(width: 5),
-                                  Text('Kinoo'),
-                                ],
+                              Align(
+                                child: Image.asset(
+                                  'assets/images/pet-cat1.png',
+                                ),
                               ),
                             ],
                           ),
                         ),
-                      ),
-                    ],
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(top: 60, bottom: 20),
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(20),
+                                bottomRight: Radius.circular(20),
+                              ),
+                              boxShadow: shadowList,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Text(
+                                      'Async',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        color: Colors.grey[700],
+                                      ),
+                                    ),
+                                    Image.asset(
+                                      'assets/icons/female.png',
+                                      height: 36,
+                                      width: 36,
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  'Abyssinian Cat',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.grey[500],
+                                  ),
+                                ),
+                                SizedBox(height: 10),
+                                Text('0.6 years old'),
+                                SizedBox(height: 10),
+                                Row(
+                                  children: <Widget>[
+                                    Icon(
+                                      Icons.location_on,
+                                      color: primaryGreen,
+                                    ),
+                                    SizedBox(width: 5),
+                                    Text('Kinoo'),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
 
